@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm ẩn danh</title>
+</head>
+
+<body>
+    <script>
+        /*
+            setTimeout(callbackFunction,miliSeconds): đặt timeout trong thời gian miliseconds
+
+        */
+        console.log("Bắt đầu vào setTimeout");
+        setTimeout(() => {
+            console.log("Thời gian 3s đã trôi qua");
+        }, 3000);
+        /*
+            setInterval(callbackFunction,miliSeconds): Thực hiện công việc lặp đi lặp lại theo chu kỳ miliSeconds
+
+        */
+        // Xây dựng đồng hồ tính giây
+        cnt = 0;
+        setInterval(function () {
+            console.log(cnt++);
+        }, 1000)
+    </script>
+</body>
+
+</html>

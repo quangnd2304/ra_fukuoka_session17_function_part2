@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm có nhiều tham số chưa xác định</title>
+</head>
+
+<body>
+    <script>
+        // Xây dựng hàm tính tổng 2 số - function bình thường
+        function addTwoNumber(number1, number2) {
+            return number1 + number2;
+        }
+        // Xây dựng hàm tính tổng 3 số - expression function
+        let addThreeNumber = function (number1, number2, number3) {
+            return number1 + number2 + number3;
+        }
+        // Xây dựng hàm tính tổng 4 số - arrow Function
+        let addFourNumber = (number1, number2, number3, number4) => number1 + number2 + number3 + number4;
+        //Xây dựng hàm tính tổng n số - n chưa biết
+        // Cách 1: Sử dụng restParameter (ES6): ...restParams -> restParam là 1 mảng
+        function add1(number1, number2, ...numbers) {
+            let total = number1 + number2;
+            for (let index = 0; index < numbers.length; index++) {
+                total += numbers[index];
+            }
+            return total;
+        }
+        console.log("Tổng 2 số là: ", add1(1, 2));
+        console.log("Tổng 3 số là: ", add1(1, 2, 3));
+        console.log("Tổng 4 số là: ", add1(1, 2, 3, 4));
+        // Cách 2: Sử dụng đối tượng arguments của js
+        function add2() {
+            let total = 0;
+            for (let index = 0; index < arguments.length; index++) {
+                total += arguments[index];
+            }
+            return total;
+        }
+        console.log("Tổng 5 số là: ", add2(1, 2, 3, 4, 5));
+        console.log("Tổng 6 số là: ", add2(1, 2, 3, 4, 5, 6));
+    </script>
+</body>
+
+</html>

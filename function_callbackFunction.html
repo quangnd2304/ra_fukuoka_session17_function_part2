@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hàm callback</title>
+</head>
+
+<body>
+    <script>
+        // Statement1;
+        // Statement2;
+        // Statement3;
+        // ....
+        //Statementn;
+        // Xử lý đồng bộ --> callback Function
+        function printResult(number) {
+            console.log("Kết quả là: ", number);
+        }
+        function addTwoNumber(number1, number2, callbackFunction) {
+            let total = number1 + number2;
+            callbackFunction(total);
+        }
+        addTwoNumber(3, 5, printResult)
+    </script>
+</body>
+
+</html>
